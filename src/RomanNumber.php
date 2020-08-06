@@ -22,6 +22,8 @@ class RomanNumber
 
     public function get(int $number)
     {
+        if($number < 1 || $number > 3999) return false;
+
         $result = '';
         foreach(self::ROMAN_NUMERALS as $roman => $arabic){
             for(; $number >= $arabic; $number -= $arabic) {

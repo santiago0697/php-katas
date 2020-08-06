@@ -15,6 +15,25 @@ class RomanNumbersTest extends TestCase
         $this->assertEquals($expectedRomanNumber, $romanNumber->get($number));
     }
 
+
+    /** 
+     * @test
+     */
+    function cannotGenerateRomanNumbersBelow1()
+    {
+        $romanNumber = new RomanNumber;
+        $this->assertFalse($romanNumber->get(0));
+    }
+
+    /** 
+     * @test
+     */
+    function cannotGenerateRomanNumbersOver3999()
+    {
+        $romanNumber = new RomanNumber;
+        $this->assertFalse($romanNumber->get(4000));
+    }
+
     function factors()
     {
         return [
